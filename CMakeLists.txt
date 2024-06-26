@@ -51,3 +51,38 @@ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/demos/
     DIRECTORY_PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
     )
     
+# 生成 xxxTargets.cmake文件
+#install(
+#	EXPORT ${PROJECT_NAME}Targets
+#	FILE ${PROJECT_NAME}Targets.cmake
+#	DESTINATION lib/cmake/
+#)
+#======================生成 xxxConfig.cmake===============================
+# 该变量会通过xxxConfig.cmake.in用于在生成的xxxConfig.cmake中
+set(INCLUDE_DIRS include)
+set(LIBRARIES lib)
+set(LIB_DIR lib)
+
+# 由cmake提供
+include(CMakePackageConfigHelpers)
+
+# 生成 xxxConfigVersion.cmake文件
+write_basic_package_version_file(
+	${PROJECT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake
+	VERSION 1.1.1
+	COMPATIBILITY SameMajorVersion
+)
+
+# 用于生成 xxxConfig.cmake文件
+configure_package_config_file(
+	${PROJECT_SOURCE_DIR}/${PROJECT_NAME}Config.cmake.in
+	${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
+	INSTALL_DESTINATION lib/cmake/
+	PATH_VARS INCLUDE_DIRS LIBRARIES LIB_DIR
+	INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX}
+)
+
+install(
+	FILES ${PROJECT_BINARY_DIR}/${PROJECT_NAME}Config.cmake ${PROJECT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake
+	DESTINATION lib/cmake/
+)
