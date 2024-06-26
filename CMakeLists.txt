@@ -23,3 +23,31 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib)
 add_subdirectory(lib)
 add_subdirectory(demos)
 add_subdirectory(examples)
+
+install(TARGETS RubberDuck
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib)
+
+install(TARGETS Assembly FMS Inventory Philosopher QueueReplication 
+        AbleBaker_3P AbleBaker_ES AbleBaker_PI DumpTruck_3P DumpTruck_ES DumpTruck_PI
+        Philosopher_3P Philosopher_ES Philosopher_PI
+        Queue Queue_PI2 Queue3P QueueBatch QueueES QueuePI QueueRandom Random RandomTest
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib)
+
+file(GLOB headers "lib/*.h")
+install(FILES ${headers} DESTINATION include)
+
+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/examples/
+    DESTINATION ${CMAKE_INSTALL_PREFIX}/examples
+    FILE_PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
+    DIRECTORY_PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
+    )
+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/demos/
+    DESTINATION ${CMAKE_INSTALL_PREFIX}/demos
+    FILE_PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
+    DIRECTORY_PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ
+    )
+    
