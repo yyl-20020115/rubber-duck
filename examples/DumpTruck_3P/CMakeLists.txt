@@ -1,0 +1,2 @@
+add_executable(DumpTruck_3P DumpTruck_3P.cpp)
+target_link_libraries(DumpTruck_3P RubberDuck)

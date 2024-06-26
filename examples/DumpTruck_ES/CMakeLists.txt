@@ -1,0 +1,2 @@
+add_executable(DumpTruck_ES DumpTruck_ES.cpp)
+target_link_libraries(DumpTruck_ES RubberDuck)

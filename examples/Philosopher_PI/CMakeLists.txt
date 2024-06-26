@@ -1,0 +1,2 @@
+add_executable(Philosopher_PI Philosopher_PI.cpp)
+target_link_libraries(Philosopher_PI RubberDuck)

@@ -1,0 +1,2 @@
+add_executable(AbleBaker_ES AbleBaker_ES.cpp)
+target_link_libraries(AbleBaker_ES RubberDuck)

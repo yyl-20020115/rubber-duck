@@ -1,0 +1,2 @@
+add_executable(AbleBaker_PI AbleBaker_PI.cpp)
+target_link_libraries(AbleBaker_PI RubberDuck)

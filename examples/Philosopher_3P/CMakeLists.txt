@@ -1,0 +1,2 @@
+add_executable(Philosopher_3P Philosopher_3P.cpp)
+target_link_libraries(Philosopher_3P RubberDuck)

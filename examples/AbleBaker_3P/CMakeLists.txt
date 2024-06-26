@@ -1,0 +1,2 @@
+add_executable(AbleBaker_3P AbleBaker_3P.cpp)
+target_link_libraries(AbleBaker_3P RubberDuck)

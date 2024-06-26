@@ -1,0 +1,2 @@
+add_executable(DumpTruck_PI DumpTruck_PI.cpp)
+target_link_libraries(DumpTruck_PI RubberDuck)

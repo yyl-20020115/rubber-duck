@@ -1,0 +1,2 @@
+add_executable(QueueReplication QueueReplication.cpp)
+target_link_libraries(QueueReplication RubberDuck)
