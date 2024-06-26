@@ -1,6 +1,8 @@
 cmake_minimum_required( VERSION 3.0 )
 project (RubberDuck VERSION 1.0 LANGUAGES CXX)
 
+set (CMAKE_BUILD_TYPE Debug)
+
 ##############设置目标文件生成位置#####################
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
@@ -10,6 +12,7 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
 set (RUNTIME_INSTALL_DIR bin)
 set (LIBRARY_INSTALL_DIR lib)
 set (INCLUDE_INSTALL_DIR include)
+
 
 if(WIN32)
     add_compile_options(/utf-8)
